@@ -14,6 +14,7 @@
   "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-bump": "0.0.13"
+    "grunt-bump": "0.0.13",
+    "license-md": "~0.3.6"
   }
 }
