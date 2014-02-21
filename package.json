@@ -1,0 +1,15 @@
+{
+  "name": "aquire",
+  "version": "0.1.0",
+  "description": "Aquire application module. A build module encouragement tool as a step before your module becomes a full npm package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "require",
+    "module"
+  ],
+  "author": "angleman",
+  "license": "MIT"
+}
