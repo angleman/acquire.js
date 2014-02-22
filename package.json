@@ -1,6 +1,6 @@
 {
   "name": "aquire",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Aquire application module. A build module encouragement tool as a step before your module becomes a full npm package.",
   "main": "index.js",
   "scripts": {
