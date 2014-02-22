@@ -1,7 +1,7 @@
 {
-  "name": "aquire",
+  "name": "acquire.js",
   "version": "0.1.7",
-  "description": "Aquire application module. A build module encouragement tool as a step before your module becomes a full npm package.",
+  "description": "Acquire application module. A build module encouragement tool as a step before your module becomes a full npm package.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Warning: no test specified\" && exit 0"
