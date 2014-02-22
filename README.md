@@ -10,7 +10,22 @@ Node great and having functional units of code in modules that can be pulled in 
 
 ### usage
 
-Put your modules in the ```app_modules``` folder, in the same folder as your ```node_modules```.
+Put your modules in the ```app_modules``` folder, in the same folder as your ```node_modules```. Ex:
+
+```
+app_modules/
+  nifty.js
+  other/
+    index.js
+  profound/
+    index.js
+    package.json
+    node_modules/
+node_modules/
+```
+
+Then ```require('aquire')``` and use it to get your application module.
+
 
 ```js
 var aquire  = require('aquire');
@@ -26,3 +41,28 @@ var mynifty = require('nifty') // nifty is now a formal package
 var myother = aquire('other')
 ```
 
+### optional path
+
+If you prefer another path for your application modules other than ```app_modules``` you can set it via the second parameter. Once passed, the default will remain changed until you change it again.
+
+Example with your modules in ```other_path_modules```:
+
+```
+other_path_modules/
+  nifty.js
+  other/
+    index.js
+  profound/
+    index.js
+    package.json
+    node_modules/
+node_modules/
+```
+
+```js
+var aquire  = require('aquire');
+var mynifty = require('nifty', 'other_path_modules') // change the default path on first use
+var myother = aquire('other')
+```
+
+### License MIT
