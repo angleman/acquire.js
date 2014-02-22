@@ -8,7 +8,7 @@ Enter ```acquire.js```
 
 ### Install
 
-```npm install acquirejs --save```
+```npm install acquire.js --save```
 
 ### Usage
 
@@ -26,11 +26,11 @@ app_modules/
 node_modules/
 ```
 
-Then ```require('acquire')``` and use it to get your application module.
+Then ```require('acquire.js')``` and use it to get your application module.
 
 
 ```js
-var acquire = require('acquirejs');
+var acquire = require('acquire.js');
 var mynifty = acquire('nifty') // nifty.js or nifty/index.js or as defined in nifty/package.json
 var myother = acquire('other')
 ```
@@ -38,7 +38,7 @@ var myother = acquire('other')
 Later when you've packaged up your functionality and published it via ```npm publish``` and ```npm install nifty --save``` to add the package to your applcation. You simple change the call to ```acquire('nifty')``` to ```require('nifty')```
 
 ```js
-var acquire = require('acquirejs');
+var acquire = require('acquire.js');
 var mynifty = require('nifty') // nifty is now a formal package
 var myother = acquire('other')
 ```
@@ -62,7 +62,7 @@ node_modules/
 ```
 
 ```js
-var acquire = require('acquirejs');
+var acquire = require('acquire.js');
 var mynifty = require('nifty', 'other_path_modules') // change the default path on first use
 var myother = acquire('other')
 ```
@@ -72,7 +72,7 @@ var myother = acquire('other')
 If you want to easily access data in your ```bower.json```, ```component.json```, ```config.json``` or ```package.json``` files, you can simple ```acquire``` and then use them.
 
 ```js
-var acquire = require('acquirejs');
+var acquire = require('acquire.js');
 var myPack  = require('package')
 console.log(myPack.name, myPack.version) // nifty 0.1.4
 ```
