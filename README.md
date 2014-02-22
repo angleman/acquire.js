@@ -2,15 +2,15 @@
 
 Require application module. A build module encouragement tool as a step before your module becomes a full npm package
 
-Node is great and having functional units of code in modules that can be pulled in via require() is really nice. However, during the time when your application code is being built and access your lovely little modules of code isn't clean ```var mymodule = require('./somepath/mymodule')``` and there's the overhead in setting up the git repo, npm package, etc, when you need to get a project out the door. What if you could build you applicaton and then come back and then put all those nifty nuggets of functionality into formal packages and easily switch to code to using the newly packaged versions? 
+Node is great and having functional units of code in modules that can be pulled in via require() is really nice. However, during the time when your application code is being built, accessing your lovely little modules isn't very clean, ex: ```var mymodule = require('./somepath/mymodule')```. More importantly there's the overhead in setting up the repo, npm package, etc; when, you really need to get a project out the door. What if you could build you applicaton and then come back and then put all those nifty nuggets of functionality into formal packages and easily switch to code to using the newly packaged versions? 
 
 Enter ```aquire```
 
-### install
+### Install
 
 ```npm install aquire --save```
 
-### usage
+### Usage
 
 Put your modules in the ```app_modules``` folder, in the same folder as your ```node_modules```. Ex:
 
@@ -43,7 +43,7 @@ var mynifty = require('nifty') // nifty is now a formal package
 var myother = aquire('other')
 ```
 
-### optional path
+### Optional path
 
 If you prefer another path for your application modules other than ```app_modules``` you can set it via the second parameter. Once passed, the default will remain changed until you change it again.
 
@@ -65,6 +65,16 @@ node_modules/
 var aquire  = require('aquire');
 var mynifty = require('nifty', 'other_path_modules') // change the default path on first use
 var myother = aquire('other')
+```
+
+### Bonus
+
+If you want to easily access data in your ```bower.json```, ```component.json```, ```config.json``` or ```package.json``` files, you can simple ```aquire``` and then use them.
+
+```js
+var aquire  = require('aquire');
+var myPack  = require('package')
+console.log(myPack.name, myPack.version) // nifty 0.1.4
 ```
 
 ### License MIT
