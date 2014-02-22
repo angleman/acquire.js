@@ -1,14 +1,14 @@
-# aquire
+# acquire.js
 
 Require application module. A build module encouragement tool as a step before your module becomes a full npm package
 
 Node is great and having functional units of code in modules that can be pulled in via require() is really nice. However, during the time when your application code is being built, accessing your lovely little modules isn't very clean, ex: ```var mymodule = require('./somepath/mymodule')```. More importantly there's the overhead in setting up the repo, npm package, etc; when, you really need to get a project out the door. What if you could build you applicaton and then come back and then put all those nifty nuggets of functionality into formal packages and easily switch to code to using the newly packaged versions? 
 
-Enter ```aquire```
+Enter ```acquire.js```
 
 ### Install
 
-```npm install aquire --save```
+```npm install acquirejs --save```
 
 ### Usage
 
@@ -26,21 +26,21 @@ app_modules/
 node_modules/
 ```
 
-Then ```require('aquire')``` and use it to get your application module.
+Then ```require('acquire')``` and use it to get your application module.
 
 
 ```js
-var aquire  = require('aquire');
-var mynifty = aquire('nifty') // nifty.js or nifty/index.js or as defined in nifty/package.json
-var myother = aquire('other')
+var acquire = require('acquirejs');
+var mynifty = acquire('nifty') // nifty.js or nifty/index.js or as defined in nifty/package.json
+var myother = acquire('other')
 ```
 
-Later when you've packaged up your functionality and published it via ```npm publish``` and ```npm install nifty --save``` to add the package to your applcation. You simple change the call to ```aquire('nifty')``` to ```require('nifty')```
+Later when you've packaged up your functionality and published it via ```npm publish``` and ```npm install nifty --save``` to add the package to your applcation. You simple change the call to ```acquire('nifty')``` to ```require('nifty')```
 
 ```js
-var aquire  = require('aquire');
+var acquire = require('acquirejs');
 var mynifty = require('nifty') // nifty is now a formal package
-var myother = aquire('other')
+var myother = acquire('other')
 ```
 
 ### Optional path
@@ -62,17 +62,17 @@ node_modules/
 ```
 
 ```js
-var aquire  = require('aquire');
+var acquire = require('acquirejs');
 var mynifty = require('nifty', 'other_path_modules') // change the default path on first use
-var myother = aquire('other')
+var myother = acquire('other')
 ```
 
 ### Bonus
 
-If you want to easily access data in your ```bower.json```, ```component.json```, ```config.json``` or ```package.json``` files, you can simple ```aquire``` and then use them.
+If you want to easily access data in your ```bower.json```, ```component.json```, ```config.json``` or ```package.json``` files, you can simple ```acquire``` and then use them.
 
 ```js
-var aquire  = require('aquire');
+var acquire = require('acquirejs');
 var myPack  = require('package')
 console.log(myPack.name, myPack.version) // nifty 0.1.4
 ```
