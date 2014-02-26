@@ -12,6 +12,13 @@
   ],
   "author": "angleman",
   "license": "MIT",
+  "repository" : { 
+	"type" : "git",
+    "url" : "https://github.com/angleman/acquire.js.git"
+  },
+  "bugs": { 
+	  "url" : "https://github.com/angleman/acquire.js/issues"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-bump": "0.0.13",
