@@ -2,7 +2,7 @@
 
 Require application module. A build module encouragement tool as a step before your module becomes a full npm package
 
-Node is great and having functional units of code in modules that can be pulled in via require() is really nice. However, during the time when your application code is being built, accessing your lovely little modules isn't very clean, ex: ```var mymodule = require('./somepath/mymodule')```. More importantly there's the overhead in setting up the repo, npm package, etc; when, you really need to get a project out the door. What if you could build you applicaton and then come back and then put all those nifty nuggets of functionality into formal packages and easily switch to code to using the newly packaged versions? 
+Node is great and having functional units of code in modules that can be pulled in via require() is really nice. However, during the time when your application code is being built, accessing your lovely little modules isn't very clean, ex: ```var mymodule = require('./somepath/mymodule')```. More importantly there's the overhead in setting up the repo, npm package, etc; when, you really need to get a project out the door. What if you could build you applicaton and then come back and then put all those nifty nuggets of functionality into formal packages and easily switch to code to using the newly packaged versions?
 
 Enter ```acquire.js```
 
@@ -39,7 +39,7 @@ Later when you've packaged up your functionality and published it via ```npm pub
 
 ```js
 var acquire = require('acquire.js');
-var mynifty = require('nifty') // nifty is now a formal package
+var mynifty = acquire('nifty') // nifty is now a formal package
 var myother = acquire('other')
 ```
 
@@ -63,7 +63,7 @@ node_modules/
 
 ```js
 var acquire = require('acquire.js');
-var mynifty = require('nifty', 'other_path_modules') // change the default path on first use
+var mynifty = acquire('nifty', 'other_path_modules') // change the default path on first use
 var myother = acquire('other')
 ```
 
@@ -73,7 +73,7 @@ If you want to easily access data in your ```bower.json```, ```component.json```
 
 ```js
 var acquire = require('acquire.js');
-var myPack  = require('package')
+var myPack  = acquire('package')
 console.log(myPack.name, myPack.version) // nifty 0.1.4
 ```
 
